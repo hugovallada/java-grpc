@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package sum;
+
+option java_package = "com.proto.sum";
+option java_multiple_files = true;
+
+service Sum{
+    rpc Sum(SumGrpcRequest) returns (SumGrpcResponse){}
+}
+
+message SumGrpcRequest{
+    int32 number_one = 1;
+    int32 number_two = 2;
+}
+
+message SumGrpcResponse {
+    int32 result = 1;
+}
